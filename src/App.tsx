@@ -7,7 +7,6 @@ import {
 import { Modal } from '@homework-task/components/Modal';
 import './styles.css';
 import PageGenerator from '@homework-task/components/PageGenerator';
-import { Hero } from '@homework-task/components/Her';
 
 const formSchema = z.object({
     title: z
