@@ -1,0 +1,32 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="48"
+        height="31"
+        viewBox="0 0 48 31"
+        fill="none"
+>
+    <rect
+            x="0.486328"
+            y="15.1851"
+            width="21.3996"
+            height="21.3996"
+            rx="2"
+            transform="rotate(-45 0.486328 15.1851)"
+            fill="#FFCC00"
+    />
+    <rect
+            x="17.25"
+            y="15.8169"
+            width="21.3996"
+            height="21.3996"
+            rx="2"
+            transform="rotate(-45 17.25 15.8169)"
+            fill="#35C89F"
+    />
+    <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M24.3488 8.71826L30.75 15.1195L23.6512 22.2183L17.25 15.817L24.3488 8.71826Z"
+            fill="#F97F88"
+    />
+</svg>
