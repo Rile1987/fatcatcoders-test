@@ -5,9 +5,8 @@ import {
     FormField,
 } from '@homework-task/components/FormGenerator';
 import { Modal } from '@homework-task/components/Modal';
-import { UserList } from '@homework-task/components/UserList';
 import './styles.css';
-import PageGenerator from './components/PageGenerator';
+import PageGenerator from '@homework-task/components/PageGenerator';
 
 const formSchema = z.object({
     title: z

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Hero } from './Hero';
-import { ItemsShowcase } from './ItemsShowcase';
-import { TrustBar } from './TrustBar';
-import { UserList } from './UserList';
-import { Layout } from './Layout';
+import { Hero } from '@homework-task/components/Hero';
+import { ItemsShowcase } from '@homework-task/components/ItemsShowcase';
+import { TrustBar } from '@homework-task/components/TrustBar';
+import { UserList } from '@homework-task/components/UserList';
+import { Layout } from '@homework-task/components/Layout';
 
 const componentMap: { [key: string]: React.ElementType } = {
     componentLayout: Layout,
