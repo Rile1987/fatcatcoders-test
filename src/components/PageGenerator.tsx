@@ -16,12 +16,12 @@ const componentMap: { [key: string]: React.ElementType } = {
 
 interface SectionComponent {
     type: string;
-    props: Record<string, string>;
+    props: any /* eslint-disable-line @typescript-eslint/no-explicit-any */;
 }
 
 interface PageSection {
     type: string;
-    props: Record<string, string>;
+    props: any /* eslint-disable-line @typescript-eslint/no-explicit-any */;
     components: SectionComponent[];
 }
 
