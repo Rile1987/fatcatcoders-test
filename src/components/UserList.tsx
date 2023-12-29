@@ -17,9 +17,7 @@ export const UserList = () => {
             .then((data: User[]) => {
                 setUsers(data);
             })
-            .catch((error) => {
-                console.error('Error fetching data: ', error);
-            });
+            .catch(() => {});
     }, []);
 
     return (

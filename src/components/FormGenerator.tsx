@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { zodResolver } from '@hookform/resolvers/zod';
 import {
     useForm,
     FormProvider,
@@ -6,9 +8,10 @@ import {
     useFormContext,
     FieldValues,
     FieldError,
+    Path,
 } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { ZodSchema } from 'zod';
+
 import { useApi } from '@homework-task/hooks/useApi';
 
 interface FormGeneratorProps<TFormFields extends FieldValues> {
@@ -34,7 +37,7 @@ export function FormGenerator<TFormFields extends FieldValues>({
         TFormFields
     >(apiConfig, {
         onSuccess: (response) => {
-            onSubmitSuccess(response.data);
+            onSubmitSuccess(response.data as TFormFields);
         },
     });
 
@@ -44,6 +47,7 @@ export function FormGenerator<TFormFields extends FieldValues>({
 
     return (
         <FormProvider {...methods}>
+            {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
             <form onSubmit={methods.handleSubmit(handleSubmit)}>
                 {renderForm()}
                 {isLoading && <p>Submitting...</p>}
@@ -86,7 +90,7 @@ export function FormField<TFormFields extends FieldValues>({
             {fieldType === 'input' && (
                 <input
                     id={name as string}
-                    {...register(name as any)}
+                    {...register(name as Path<TFormFields>)}
                     className={`${inputClasses} ${
                         errorMessage ? 'border-red-500' : ''
                     }`}
@@ -95,7 +99,7 @@ export function FormField<TFormFields extends FieldValues>({
             {fieldType === 'textarea' && (
                 <textarea
                     id={name as string}
-                    {...register(name as any)}
+                    {...register(name as Path<TFormFields>)}
                     className={`${inputClasses} ${
                         errorMessage ? 'border-red-500' : ''
                     }`}

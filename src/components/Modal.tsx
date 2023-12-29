@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom';
 
 interface ModalProps {
@@ -7,7 +8,7 @@ interface ModalProps {
     onClose: () => void;
 }
 
-export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
+export const Modal = ({ isOpen, children }: ModalProps) => {
     if (!isOpen) return null;
 
     return ReactDOM.createPortal(

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Hero } from '@homework-task/components/Hero';
 import { ItemsShowcase } from '@homework-task/components/ItemsShowcase';
+import { Layout } from '@homework-task/components/Layout';
 import { TrustBar } from '@homework-task/components/TrustBar';
 import { UserList } from '@homework-task/components/UserList';
-import { Layout } from '@homework-task/components/Layout';
 
 const componentMap: { [key: string]: React.ElementType } = {
     componentLayout: Layout,
@@ -16,12 +16,12 @@ const componentMap: { [key: string]: React.ElementType } = {
 
 interface SectionComponent {
     type: string;
-    props: any;
+    props: Record<string, string>;
 }
 
 interface PageSection {
     type: string;
-    props: any;
+    props: Record<string, string>;
     components: SectionComponent[];
 }
 

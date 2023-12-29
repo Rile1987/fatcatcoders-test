@@ -18,7 +18,12 @@ const config = {
         'prettier',
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
-    settings: {react: {version: '18.2'}},
+    settings: {
+        react: {version: '18.2'},
+        'import/resolver': {
+            'typescript': {}
+        },
+    },
     parser: '@typescript-eslint/parser',
     plugins: [
         'react-refresh',
@@ -31,6 +36,8 @@ const config = {
         'prettier'
     ],
     parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: "./",
         ecmaVersion: "latest",
         sourceType: "module",
         ecmaFeatures: {
@@ -40,6 +47,7 @@ const config = {
     overrides: [
         {
             extends: [
+                'plugin:@typescript-eslint/recommended',
                 'plugin:@typescript-eslint/recommended-requiring-type-checking',
             ],
             files: ['*.ts', '*.tsx', '*.cjs', '*.mjs'],
@@ -49,6 +57,8 @@ const config = {
         },
     ],
     rules: {
+        'react/jsx-uses-vars': 'error',
+        'react/jsx-uses-react': 'error',
         'react-refresh/only-export-components': [
             'warn',
             {

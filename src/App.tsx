@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import { z } from 'zod';
+
 import {
     FormGenerator,
     FormField,
@@ -24,7 +26,7 @@ type FormInputs = z.infer<typeof formSchema>;
 const App = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const handleFormSubmit = (data: FormInputs) => {
+    const handleFormSubmit = () => {
         setIsModalOpen(false);
     };
 
